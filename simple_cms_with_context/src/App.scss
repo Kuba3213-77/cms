@@ -1,0 +1,113 @@
+/* COLORS */ 
+$red: rgb(235, 45, 45);
+$green_light: #20e68a;
+$gray_light: rgb(50, 50, 50);
+
+/* MIXINS */ 
+@mixin mobile {
+    @media (max-width: 482px) { @content; }
+}
+@mixin tablet {
+    @media (max-width: 768px) { @content; }
+}
+@mixin desktop {
+    @media (max-width: 1024px) { @content; }
+}
+@mixin desktop {
+    @media (max-width: 1280px) { @content; }
+}
+
+/* STYLES */
+.container {
+    border: 1px solid $red;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.page {
+    padding: 10px;
+    background: $gray_light;
+    margin-top: 20px;
+}
+
+.header-cotainer-i {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $gray_light;
+        padding: 10px;
+
+        h1 {
+            margin: 0;
+        }
+
+        @include desktop {
+            flex-direction: column;
+        }
+    }
+    .logo {
+        background: $red;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    .menu {
+        display: flex;
+        list-style: none;
+
+        .item {
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px;
+            
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+                color: $green_light;
+            }
+        }
+    } 
+}
+
+.form-container {
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+        background: rgb(69, 69, 69);
+        padding: 20px;
+        border-radius: 8px;
+
+        h2 {
+            text-align: center;
+            margin: 0;
+        }
+
+        input {
+            margin: 10px 0;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+    }
+
+    .error {
+        color: red;
+    }
+}
+
+.settings {
+    margin: 20px 0;
+
+    .group {
+        display: flex;
+        gap: 10px;
+
+        label {
+            min-width: 100px;
+        }
+    }
+}
