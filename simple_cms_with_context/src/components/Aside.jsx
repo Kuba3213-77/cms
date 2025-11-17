@@ -3,8 +3,8 @@ import Context from "../context";
 
 const KEY_SETTINGS = "home:settings";
 const defaults = {
-  image1: "images/car1.jpg",
-  image2: "images/car2.jpg",
+  image1: "assets/911 GT3 RS.jpg",
+  image2: "npmimages/car2.jpg",
   image3: "images/car3.jpg",
   text1: "Opis 1",
   text2: "Opis 2",
@@ -51,50 +51,23 @@ export default function Aside() {
   const borders = [settings.border1, settings.border2, settings.border3];
 
   return (
-    <aside style={{ padding: 16 }}>
-      {ctx.slider && (
-        <div
-          style={{
-            height: 200,
-            width: "100%",
-            background: ctx.slider_background,
-            borderRadius: 10,
-            padding: 10,
-          }}
-        >
-          <h2>Welcome in new Techni CMS</h2>
-          <h3>Create what you want!</h3>
-        </div>
-      )}
+    <aside className="aside-panel">
 
-      <div style={{ textAlign: "center", marginBottom: 16 }}>
+      <div className="aside-title">
         <h1>TopCars</h1>
         <p>Witaj na stronie</p>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          gap: 12,
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
+      <div className="aside-gallery">
         {images.map((src, i) => (
-          <div
-            key={i}
-            style={{ width: `${settings.imageWidth}%`, maxWidth: 320 }}
-          >
+          <div key={i} className="aside-item" style={{ width: `${settings.imageWidth}%` }}>
             <img
               src={src}
               alt={`car${i}`}
-              style={{
-                width: "100%",
-                borderRadius: borders[i],
-              }}
+              style={{ borderRadius: borders[i] }}
               onError={(e) => (e.currentTarget.src = "images/car1.jpg")}
             />
-            <p style={{ fontSize: settings.textSize }}>{texts[i]}</p>
+            <p className="aside-caption" style={{ fontSize: settings.textSize }}>{texts[i]}</p>
           </div>
         ))}
       </div>

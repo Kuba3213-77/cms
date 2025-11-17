@@ -93,21 +93,23 @@ export default function Admin() {
 
   if (!isAdmin) {
     return (
-      <div style={{ maxWidth: 400, padding: 12 }}>
+      <div className="admin admin-login">
         <h2>Logowanie</h2>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} className="admin-form">
           <input
+            className="input"
             placeholder="Login"
             value={loginUser}
             onChange={(e) => setLoginUser(e.target.value)}
           />
           <input
+            className="input"
             type="password"
             placeholder="Hasło"
             value={loginPass}
             onChange={(e) => setLoginPass(e.target.value)}
           />
-          <button type="submit">Zaloguj</button>
+          <button className="btn" type="submit">Zaloguj</button>
         </form>
       </div>
     );
@@ -125,73 +127,87 @@ export default function Admin() {
   const borders = ["border1", "border2", "border3"];
 
   return (
-    <div style={{ maxWidth: 900, padding: 12 }}>
-      <h2>Panel administracyjny</h2>
-      <button onClick={handleLogout}>Wyloguj</button>
+    <div className="admin admin-panel">
+      <div className="admin-header">
+        <h2>Panel administracyjny</h2>
+        <button className="btn btn-logout" onClick={handleLogout}>Wyloguj</button>
+      </div>
       <hr />
 
-      {fields.map(({ key, label }) => (
-        <div key={key} style={{ marginBottom: 8 }}>
-          <label>{label}</label>
-          <input
-            value={settings[key]}
-            onChange={(e) => update(key, e.target.value)}
-            style={{ width: "100%" }}
-          />
+      <div className="admin-grid">
+        <div className="admin-fields">
+          {fields.map(({ key, label }) => (
+            <div key={key} className="field">
+              <label>{label}</label>
+              <input
+                className="input"
+                value={settings[key]}
+                onChange={(e) => update(key, e.target.value)}
+              />
+            </div>
+          ))}
         </div>
-      ))}
 
-      <label>Szerokość obrazków: {settings.imageWidth}%</label>
-      <input
-        type="range"
-        min="50"
-        max="200"
-        value={settings.imageWidth}
-        onChange={(e) => update("imageWidth", +e.target.value)}
-        style={{ width: "100%" }}
-      />
+        <div className="admin-controls">
+          <div className="field">
+            <label>Szerokość obrazków: {settings.imageWidth}%</label>
+            <input
+              className="range"
+              type="range"
+              min="50"
+              max="200"
+              value={settings.imageWidth}
+              onChange={(e) => update("imageWidth", +e.target.value)}
+            />
+          </div>
 
-      <label>Rozmiar tekstu: {settings.textSize}px</label>
-      <input
-        type="range"
-        min="12"
-        max="48"
-        value={settings.textSize}
-        onChange={(e) => update("textSize", +e.target.value)}
-        style={{ width: "100%" }}
-      />
+          <div className="field">
+            <label>Rozmiar tekstu: {settings.textSize}px</label>
+            <input
+              className="range"
+              type="range"
+              min="12"
+              max="48"
+              value={settings.textSize}
+              onChange={(e) => update("textSize", +e.target.value)}
+            />
+          </div>
 
-      <label>Czcionka</label>
-      <select
-        value={settings.fontFamily}
-        onChange={(e) => update("fontFamily", e.target.value)}
-        style={{ width: "100%" }}
-      >
-        <option value={defaults.fontFamily}>System / Inter</option>
-        <option value='Roboto, "Helvetica Neue", Arial, sans-serif'>
-          Roboto
-        </option>
-        <option value='Georgia, "Times New Roman", Times, serif'>
-          Georgia
-        </option>
-        <option value='"Courier New", Courier, monospace'>Courier</option>
-      </select>
+          <div className="field">
+            <label>Czcionka</label>
+            <select
+              className="select"
+              value={settings.fontFamily}
+              onChange={(e) => update("fontFamily", e.target.value)}
+            >
+              <option value={defaults.fontFamily}>System / Inter</option>
+              <option value='Roboto, "Helvetica Neue", Arial, sans-serif'>
+                Roboto
+              </option>
+              <option value='Georgia, "Times New Roman", Times, serif'>
+                Georgia
+              </option>
+              <option value='"Courier New", Courier, monospace'>Courier</option>
+            </select>
+          </div>
 
-      {borders.map((k, i) => (
-        <div key={k}>
-          <label>
-            Zaokrąglenie obrazka {i + 1}: {settings[k]}px
-          </label>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={settings[k]}
-            onChange={(e) => update(k, +e.target.value)}
-            style={{ width: "100%" }}
-          />
+          {borders.map((k, i) => (
+            <div key={k} className="field">
+              <label>
+                Zaokrąglenie obrazka {i + 1}: {settings[k]}px
+              </label>
+              <input
+                className="range"
+                type="range"
+                min="0"
+                max="100"
+                value={settings[k]}
+                onChange={(e) => update(k, +e.target.value)}
+              />
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }
