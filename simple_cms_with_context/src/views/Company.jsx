@@ -6,6 +6,12 @@ export default function Company() {
       <h2>About Me</h2>
 
       <div className="author">
+        <img
+          className="author-image"
+          src="../assets/profile2.png"
+          alt="Jan Kowalski"
+        />
+
         <div className="author-info">
           <h3>Jan Kowalski</h3>
           <p>
@@ -15,7 +21,6 @@ export default function Company() {
           </p>
         </div>
       </div>
-
 
       <div className="project-doc">
         <h3>Dokumentacja Projektu</h3>
