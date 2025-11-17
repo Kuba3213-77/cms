@@ -5,8 +5,8 @@ function Footer() {
       <div className="footer-inner">
         <div>© 2025 Techni CMS. All rights reserved.</div>
         <div>
-          <a className="footer-link" href="/privacy">Privacy</a>
-          <a className="footer-link" href="/terms">Terms</a>
+          <a className="footer-link" >Privacy</a>
+          <a className="footer-link" >Terms</a>
         </div>
       </div>
     </footer>

@@ -146,12 +146,12 @@ html, body {
 .aside-item img { width: 100%; display: block; }
 .aside-caption { margin: 6px 0 0; color: $muted; }
 
-/* Footer */
+
 .footer .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:12px; }
 .footer-link { color: inherit; margin-right: 8px; text-decoration: none; }
 .footer-link:last-child { margin-right: 0; }
 
-/* Select overrides */
+
 .admin .select {
     color: $text; 
     -webkit-text-fill-color: $text;

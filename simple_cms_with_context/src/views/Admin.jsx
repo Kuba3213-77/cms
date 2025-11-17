@@ -84,7 +84,7 @@ export default function Admin() {
     }
   };
 
-  // 🚪 Wylogowanie
+
   const handleLogout = () => {
     localStorage.removeItem(KEY_ADMIN);
     localStorage.removeItem("logged");
