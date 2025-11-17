@@ -19,7 +19,6 @@ $base-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Ne
 @mixin laptop { @media (max-width: 1024px) { @content; } }
 @mixin desktop { @media (min-width: 1025px) { @content; } }
 
-/* BASE */
 html, body {
     height: 100%;
     margin: 0;
@@ -43,7 +42,6 @@ html, body {
     box-shadow: $shadow;
 }
 
-/* Admin styles */
 .admin { max-width: 980px; margin: 0 auto; padding: 18px; }
 
 .admin-login { max-width: 420px; padding: 20px; background: darken($card-bg, 2%); border-radius: 10px; box-shadow: $shadow; }
@@ -66,7 +64,7 @@ html, body {
 .admin-panel { overflow: auto; }
 .admin-fields, .admin-controls { min-height: 40px; }
 
-/* Header */
+
 .header-cotainer-i {
     .header {
         display: flex;
@@ -120,7 +118,7 @@ html, body {
     }
 }
 
-/* Layout */
+
 .layout {
     display: grid;
     grid-template-columns: 1fr 320px;
@@ -168,7 +166,7 @@ html, body {
     -webkit-text-fill-color: #000;
 }
 
-/* Form */
+
 .form-container {
     form {
         display: flex;
@@ -208,7 +206,7 @@ html, body {
     .error { color: #ff6b6b; font-weight: 600; }
 }
 
-/* Settings */
+
 .settings {
     margin: 20px 0;
 
@@ -217,7 +215,7 @@ html, body {
     label { min-width: 110px; color: $muted; }
 }
 
-/* Footer */
+
 .footer {
     margin-top: 22px;
     padding: 14px 18px;
@@ -236,9 +234,7 @@ html, body {
 
 .muted { color: $muted; }
 
-/* ========================== */
-/* Sekcja About Me / Company  */
-/* ========================== */
+
 .about-me {
   padding: 20px;
 

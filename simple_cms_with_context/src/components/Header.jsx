@@ -11,7 +11,7 @@ function Header() {
             HOME
           </Link>
           <Link className="item" to={PAGES.PAGE_2}>
-            COMPANY
+            ABOUT ME
           </Link>
           <Link className="item" to={PAGES.PAGE_3}>
             OFFER
