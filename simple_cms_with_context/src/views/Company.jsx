@@ -9,11 +9,11 @@ export default function Company() {
         <img
           className="author-image"
           src="../assets/profile2.png"
-          alt="Jan Kowalski"
+          alt="Jakub Lipka"
         />
 
         <div className="author-info">
-          <h3>Jan Kowalski</h3>
+          <h3>Jakub Lipka</h3>
           <p>
             Jestem pasjonatem tworzenia stron i aplikacji webowych. Lubię uczyć się nowych technologii
             i eksperymentować z projektami React. W tym projekcie pokazuję moje umiejętności w tworzeniu
